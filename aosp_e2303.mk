@@ -29,7 +29,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote64_32
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony.mk)
-$(call inherit-product, device/sony/kanuti/device.mk)
 $(call inherit-product, vendor/sony/tulip/tulip-vendor.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 $(call inherit-product-if-exists, prebuilts/chromium/webview_prebuilt.mk)
