@@ -12,14 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+LOCAL_PATH:= device/sony/tulip
+
 TARGET_KERNEL_CONFIG := aosp_kanuti_tulip_defconfig
 
 DEVICE_PACKAGE_OVERLAYS += \
-    device/sony/tulip/overlay
+    $(LOCAL_PATH)/overlay
 
 # Recovery
 PRODUCT_COPY_FILES += \
-    device/sony/tulip/recovery/root/etc/bootrec-device:recovery/root/etc/bootrec-device
+    $(LOCAL_PATH)/recovery/root/etc/bootrec-device:recovery/root/etc/bootrec-device
 
 # Use zygote64_32
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote64_32
@@ -34,11 +36,11 @@ $(call inherit-product-if-exists, prebuilts/chromium/webview_prebuilt.mk)
 $(call inherit-product-if-exists, vendor/google/products/gms.mk)
 
 PRODUCT_COPY_FILES += \
-    device/sony/tulip/rootdir/system/etc/sensor/sensord_cfg_axis.txt:system/etc/sensor/sensord_cfg_axis.txt \
-    device/sony/tulip/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
-    device/sony/tulip/rootdir/system/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    device/sony/tulip/rootdir/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
-    device/sony/tulip/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml
+    $(LOCAL_PATH)/rootdir/system/etc/sensor/sensord_cfg_axis.txt:system/etc/sensor/sensord_cfg_axis.txt \
+    $(LOCAL_PATH)/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
+    $(LOCAL_PATH)/rootdir/system/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    $(LOCAL_PATH)/rootdir/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
+    $(LOCAL_PATH)/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml
 
 PRODUCT_NAME := aosp_e2303
 PRODUCT_DEVICE := tulip
