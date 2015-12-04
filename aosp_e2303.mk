@@ -17,6 +17,10 @@ TARGET_KERNEL_CONFIG := aosp_kanuti_tulip_defconfig
 DEVICE_PACKAGE_OVERLAYS += \
     device/sony/tulip/overlay
 
+# Recovery
+PRODUCT_COPY_FILES += \
+    device/sony/tulip/recovery/root/etc/bootrec-device:recovery/root/etc/bootrec-device
+
 # Use zygote64_32
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote64_32
 
